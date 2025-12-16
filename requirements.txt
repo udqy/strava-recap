@@ -1,0 +1,8 @@
+requests
+python-dotenv
+polyline
+cairosvg
+langchain
+langchain-openai
+langchain-anthropic
+langchain-google-genai
