@@ -1,11 +1,17 @@
 # Strava Recap
 
-Generate your Strava year recap with PNG visualizations.
+Generate your Strava year recap with transparent PNG visualizations.
+
+A common way to share these stats is by overlaying them on top of other pictures. Here's my recap as an example - [Link](https://drive.google.com/file/d/19MAeFGYMrJnxXaDKTvALZAnY1SdCscqK/view?usp=sharing).
 
 ## Setup
 
-1. **Install dependencies**
+1. **Install**
    ```bash
+   git clone https://github.com/udqy/strava-recap.git
+   cd strava-recap
+   python3 -m venv .venv
+   source .venv/bin/activate
    pip install -r requirements.txt
    ```
 
@@ -52,11 +58,6 @@ python main.py --ai
 python main.py --roast
 ```
 
-**Both AI features:**
-```bash
-python main.py --ai --roast
-```
-
 ### What it does:
 - Fetches all your activities from the current year
 - Analyzes your stats across all activity types
@@ -67,18 +68,9 @@ python main.py --ai --roast
 
 To use AI features, add ONE of these to your `.env`:
 
-**OpenAI:**
 ```
 OPENAI_API_KEY=sk-...
-```
-
-**Anthropic Claude:**
-```
 ANTHROPIC_API_KEY=sk-ant-...
-```
-
-**Google Gemini:**
-```
 GOOGLE_API_KEY=...
 ```
 
@@ -86,22 +78,4 @@ The app auto-detects which provider to use based on which key is set.
 
 **Flags:**
 - `--ai` - Generates thoughtful year review with insights
-- `--roast` - Generates funny, sarcastic roast of your year
-
-**Models used:**
-- OpenAI: GPT-4
-- Anthropic: Claude 3.5 Sonnet
-- Google: Gemini Pro
-
-## Output
-
-**Standard visualizations** (always generated):
-- `recap.png` - Overall stats summary and records
-- `by_type.png` - Detailed breakdown by activity type
-- `monthly.png` - Monthly progress chart
-- `time_analysis.png` - Hour of day and day of week patterns
-- `detailed_stats.png` - Distance breakdown and performance metrics
-
-**AI visualizations** (with `--ai` or `--roast`):
-- `ai_review.png` - AI-generated year review
-- `ai_roast.png` - AI-generated funny roast
+- `--roast` - Generates sarcastic roast of your year
